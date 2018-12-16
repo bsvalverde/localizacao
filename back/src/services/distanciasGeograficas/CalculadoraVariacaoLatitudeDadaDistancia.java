@@ -27,11 +27,11 @@ public class CalculadoraVariacaoLatitudeDadaDistancia {
 	}
 	
 	private void inicializaVariaveis() {
-		this.raioDaTerra = 6371;
-		this.latitudeInicial = new ConversorGrausEmRadianos(objeto.getLatitude()).call();
-		this.distanciaAngular = distancia / raioDaTerra;
+		raioDaTerra = 6371;
+		latitudeInicial = new ConversorGrausEmRadianos(objeto.getLatitude()).call();
+		distanciaAngular = distancia / raioDaTerra;
 		double angulo = objeto.getLatitude() > 0 ? 180 : 0;
-		this.direcao = new ConversorGrausEmRadianos(angulo).call();
+		direcao = new ConversorGrausEmRadianos(angulo).call();
 	}
 	
 	private void calculaNovaLatitude() {

@@ -20,18 +20,18 @@ public class CalculadoraDistanciaEntreObjetosGeograficos {
 	
 	public double call() {
 		inicializaVariaveis();
-		return haversine();
+		return calculaDistancia();
 	}
 	
 	private void inicializaVariaveis() {
-		this.raioDaTerra = 6371;
-		this.latitude1 = new ConversorGrausEmRadianos(objeto1.getLatitude()).call();
-		this.latitude2 = new ConversorGrausEmRadianos(objeto2.getLatitude()).call();
-		this.variacaoLatitude = variacaoEntreCoordenadasEmRadianos(objeto1.getLatitude(), objeto2.getLatitude());
-		this.variacaoLongitude = variacaoEntreCoordenadasEmRadianos(objeto1.getLongitude(), objeto2.getLongitude());
+		raioDaTerra = 6371;
+		latitude1 = new ConversorGrausEmRadianos(objeto1.getLatitude()).call();
+		latitude2 = new ConversorGrausEmRadianos(objeto2.getLatitude()).call();
+		variacaoLatitude = variacaoEntreCoordenadasEmRadianos(objeto1.getLatitude(), objeto2.getLatitude());
+		variacaoLongitude = variacaoEntreCoordenadasEmRadianos(objeto1.getLongitude(), objeto2.getLongitude());
 	}
 	
-	private double haversine() {
+	private double calculaDistancia() {
 		double a = Math.pow(Math.sin(variacaoLatitude / 2), 2) +
 				Math.cos(latitude1) * Math.cos(latitude2) *
 				Math.pow(Math.sin(variacaoLongitude / 2), 2);

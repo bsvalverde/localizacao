@@ -28,18 +28,18 @@ public class CalculadoraVariacaoLongitudeDadaDistancia {
 	}
 	
 	private void inicializaVariaveis() {
-		this.raioDaTerra = 6371;
-		this.latitudeInicial = new ConversorGrausEmRadianos(objeto.getLatitude()).call();
-		this.longitudeInicial = new ConversorGrausEmRadianos(objeto.getLongitude()).call();
-		this.distanciaAngular = distancia / raioDaTerra;
+		raioDaTerra = 6371;
+		latitudeInicial = new ConversorGrausEmRadianos(objeto.getLatitude()).call();
+		longitudeInicial = new ConversorGrausEmRadianos(objeto.getLongitude()).call();
+		distanciaAngular = distancia / raioDaTerra;
 		double angulo = objeto.getLongitude() > 0 ? 270 : 90;
-		this.direcao = new ConversorGrausEmRadianos(angulo).call();
+		direcao = new ConversorGrausEmRadianos(angulo).call();
 	}
 	
 	private void calculaNovaLongitude() {
 		double a = Math.sin(direcao) * Math.sin(distanciaAngular) * Math.cos(latitudeInicial);
 		double b = Math.cos(distanciaAngular) - Math.pow(Math.sin(latitudeInicial), 2);
-		this.longitudeFinal = this.longitudeInicial + Math.atan2(a, b);
+		longitudeFinal = longitudeInicial + Math.atan2(a, b);
 	}
 	
 	private double calculaVariacao() {

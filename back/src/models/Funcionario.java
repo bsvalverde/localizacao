@@ -12,7 +12,7 @@ public class Funcionario extends ObjetoGeografico {
 	}
 	
 	public String getNome() {
-		return this.nome;
+		return nome;
 	}
 	
 	public void setNome(String nome) {
@@ -20,7 +20,7 @@ public class Funcionario extends ObjetoGeografico {
 	}
 	
 	public List<Loja> getLojas() {
-		return this.lojas;
+		return lojas;
 	}
 
 }

@@ -9,7 +9,7 @@ public class Loja extends ObjetoGeografico {
 	}
 	
 	public String getNome() {
-		return this.nome;
+		return nome;
 	}
 	
 	public void setNome(String nome) {

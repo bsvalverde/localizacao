@@ -10,7 +10,7 @@ public class ObjetoGeografico {
 	}
 	
 	public double getLatitude() {
-		return this.latitude;
+		return latitude;
 	}
 	
 	public void setLatitude(double latitude) {
@@ -18,7 +18,7 @@ public class ObjetoGeografico {
 	}
 	
 	public double getLongitude() {
-		return this.longitude;
+		return longitude;
 	}
 	
 	public void setLongitude(double longitude) {
