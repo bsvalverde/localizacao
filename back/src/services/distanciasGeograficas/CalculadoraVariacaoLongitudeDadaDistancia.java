@@ -8,7 +8,6 @@ public class CalculadoraVariacaoLongitudeDadaDistancia {
 	private ObjetoGeografico objeto;
 	private double distancia;
 	
-	private double raioDaTerra;
 	private double latitudeInicial;
 	private double longitudeInicial;
 	private double distanciaAngular;
@@ -28,10 +27,9 @@ public class CalculadoraVariacaoLongitudeDadaDistancia {
 	}
 	
 	private void inicializaVariaveis() {
-		raioDaTerra = 6371;
 		latitudeInicial = new ConversorGrausEmRadianos(objeto.getLatitude()).call();
 		longitudeInicial = new ConversorGrausEmRadianos(objeto.getLongitude()).call();
-		distanciaAngular = distancia / raioDaTerra;
+		distanciaAngular = distancia / DistanciasGeograficasSettings.RAIO_DA_TERRA;
 		double angulo = objeto.getLongitude() > 0 ? 270 : 90;
 		direcao = new ConversorGrausEmRadianos(angulo).call();
 	}

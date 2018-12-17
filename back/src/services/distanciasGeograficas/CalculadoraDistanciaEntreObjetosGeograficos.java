@@ -7,7 +7,6 @@ public class CalculadoraDistanciaEntreObjetosGeograficos {
 	private ObjetoGeografico objeto1;
 	private ObjetoGeografico objeto2;
 
-	private double raioDaTerra;
 	private double latitude1;
 	private double latitude2;
 	private double variacaoLatitude;
@@ -24,7 +23,6 @@ public class CalculadoraDistanciaEntreObjetosGeograficos {
 	}
 	
 	private void inicializaVariaveis() {
-		raioDaTerra = 6371;
 		latitude1 = new ConversorGrausEmRadianos(objeto1.getLatitude()).call();
 		latitude2 = new ConversorGrausEmRadianos(objeto2.getLatitude()).call();
 		variacaoLatitude = variacaoEntreCoordenadasEmRadianos(objeto1.getLatitude(), objeto2.getLatitude());
@@ -36,7 +34,7 @@ public class CalculadoraDistanciaEntreObjetosGeograficos {
 				Math.cos(latitude1) * Math.cos(latitude2) *
 				Math.pow(Math.sin(variacaoLongitude / 2), 2);
 		double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-		double distancia = raioDaTerra * c;
+		double distancia = DistanciasGeograficasSettings.RAIO_DA_TERRA * c;
 		return distancia;
 	}
 	
