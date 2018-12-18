@@ -1,4 +1,4 @@
-package models;
+package modelos;
 
 public class ObjetoGeografico {
 	protected double latitude;

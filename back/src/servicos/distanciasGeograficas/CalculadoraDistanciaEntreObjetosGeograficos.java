@@ -1,7 +1,7 @@
-package services.distanciasGeograficas;
+package servicos.distanciasGeograficas;
 
-import models.ObjetoGeografico;
-import services.angulos.ConversorGrausEmRadianos;
+import modelos.ObjetoGeografico;
+import servicos.angulos.ConversorGrausEmRadianos;
 
 public class CalculadoraDistanciaEntreObjetosGeograficos {
 	private ObjetoGeografico objeto1;
@@ -34,7 +34,7 @@ public class CalculadoraDistanciaEntreObjetosGeograficos {
 				Math.cos(latitude1) * Math.cos(latitude2) *
 				Math.pow(Math.sin(variacaoLongitude / 2), 2);
 		double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-		double distancia = DistanciasGeograficasSettings.RAIO_DA_TERRA * c;
+		double distancia = ConfiguracoesDistanciasGeograficas.RAIO_DA_TERRA * c;
 		return distancia;
 	}
 	

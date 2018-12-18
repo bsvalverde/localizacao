@@ -2,7 +2,7 @@ package database.interfaces;
 
 import java.util.List;
 
-import models.Funcionario;
+import modelos.Funcionario;
 
 public interface FuncionarioGateway {
 	

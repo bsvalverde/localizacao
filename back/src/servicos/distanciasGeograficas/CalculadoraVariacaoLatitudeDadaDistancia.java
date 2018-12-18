@@ -1,8 +1,8 @@
-package services.distanciasGeograficas;
+package servicos.distanciasGeograficas;
 
-import models.ObjetoGeografico;
-import services.angulos.ConversorGrausEmRadianos;
-import services.angulos.ConversorRadianosEmGraus;
+import modelos.ObjetoGeografico;
+import servicos.angulos.ConversorGrausEmRadianos;
+import servicos.angulos.ConversorRadianosEmGraus;
 
 public class CalculadoraVariacaoLatitudeDadaDistancia {
 	private ObjetoGeografico objeto;
@@ -27,7 +27,7 @@ public class CalculadoraVariacaoLatitudeDadaDistancia {
 	
 	private void inicializaVariaveis() {
 		latitudeInicial = new ConversorGrausEmRadianos(objeto.getLatitude()).call();
-		distanciaAngular = distancia / DistanciasGeograficasSettings.RAIO_DA_TERRA;
+		distanciaAngular = distancia / ConfiguracoesDistanciasGeograficas.RAIO_DA_TERRA;
 		double angulo = objeto.getLatitude() > 0 ? 180 : 0;
 		direcao = new ConversorGrausEmRadianos(angulo).call();
 	}

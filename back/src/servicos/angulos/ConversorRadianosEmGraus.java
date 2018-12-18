@@ -1,4 +1,4 @@
-package services.angulos;
+package servicos.angulos;
 
 public class ConversorRadianosEmGraus {
 	private double radianos;

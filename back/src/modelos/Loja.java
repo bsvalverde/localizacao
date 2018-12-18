@@ -1,4 +1,4 @@
-package models;
+package modelos;
 
 public class Loja extends ObjetoGeografico {
 	private String nome;

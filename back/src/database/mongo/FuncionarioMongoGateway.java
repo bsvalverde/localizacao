@@ -10,14 +10,14 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 
 import database.interfaces.FuncionarioGateway;
-import models.Funcionario;
+import modelos.Funcionario;
 
 public class FuncionarioMongoGateway implements FuncionarioGateway {
 	private MongoDbFactory mongoFactory = MongoDbFactory.getInstance();
 	
 	public void salvar(Funcionario funcionario) {
-		MongoDatabase database = mongoFactory.getDatabase(MongoDbSettings.DATABASE);
-		MongoCollection<Document> collection = database.getCollection("Funcionarios");
+		MongoDatabase database = mongoFactory.getDatabase(ConfiguracoesMongoDb.DATABASE);
+		MongoCollection<Document> collection = database.getCollection(ConfiguracoesMongoDb.FUNCIONARIOS);
 		Document doc = new Document("name", funcionario.getNome())
 				.append("latitude", funcionario.getLatitude())
 				.append("longitude", funcionario.getLongitude());
@@ -25,8 +25,8 @@ public class FuncionarioMongoGateway implements FuncionarioGateway {
 	}
 	
 	public List<Funcionario> buscarTodos() {
-		MongoDatabase database = mongoFactory.getDatabase(MongoDbSettings.DATABASE);
-		MongoCollection<Document> collection = database.getCollection("funcionarios");
+		MongoDatabase database = mongoFactory.getDatabase(ConfiguracoesMongoDb.DATABASE);
+		MongoCollection<Document> collection = database.getCollection(ConfiguracoesMongoDb.FUNCIONARIOS);
 		FindIterable<Document> db = collection.find();
 		List<Funcionario> funcionarios = new ArrayList<>();
 		for(Document document : db) {
