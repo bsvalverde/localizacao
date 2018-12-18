@@ -2,17 +2,20 @@ package servicos.angulos;
 
 public class ConversorGrausEmRadianos {
 	private double graus;
-	
+
+	private double radianos;
+
 	public ConversorGrausEmRadianos(double graus) {
 		this.graus = graus;
 	}
-	
+
 	public double call() {
-		return converte();
+		converteGrausEmRadianos();
+		return radianos;
 	}
-	
-	private double converte() {
-		return graus * Math.PI / 180;
+
+	private void converteGrausEmRadianos() {
+		radianos = graus * Math.PI / 180;
 	}
 
 }
