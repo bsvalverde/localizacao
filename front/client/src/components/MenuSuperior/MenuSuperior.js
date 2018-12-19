@@ -11,6 +11,12 @@ const menuSuperior = (props) => (
     <NavLink to="/lojas" className={ classes.Botao } activeClassName={ classes.Ativo }>
       Lojas
     </NavLink>
+    <NavLink to="/visitas-por-funcionario" className={ classes.Botao } activeClassName={ classes.Ativo }>
+      Visitas por Funcionário
+    </NavLink>
+    <NavLink to="/visitas-por-loja" className={ classes.Botao } activeClassName={ classes.Ativo }>
+      Visitas por Loja
+    </NavLink>
   </div>
 );
 

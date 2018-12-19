@@ -17,7 +17,10 @@ class Funcionarios extends Component {
   getFuncionariosFromDatabase = () => {
     fetch("/api/getFuncionarios")
       .then(data => data.json())
-      .then(res => this.setState({ funcionarios: res.funcionarios }));
+      .then(res => {
+        res.funcionarios.sort((a, b) => { return a.name > b.name });
+        this.setState({ funcionarios: res.funcionarios })
+      });
   }
 
   render() {
@@ -27,7 +30,7 @@ class Funcionarios extends Component {
                 nome={ funcionario.name }
                 latitude={ funcionario.latitude }
                 longitude={ funcionario.longitude } />
-    })
+    });
     return (
       <div className={ classes.Funcionarios }>
         { this.state.funcionarios.length > 0 ? funcionarios : <p>Nada para mostrar</p> }
