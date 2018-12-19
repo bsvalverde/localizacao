@@ -4,31 +4,45 @@ const API_PORT = 3001
 const app = express();
 const router = express.Router();
 
-//
-// const MongoClient = require('mongodb').MongoClient;
-// const assert = require('assert');
+const MongoClient = require('mongodb').MongoClient;
+const assert = require('assert');
 
-// // Connection URL
-// const url = 'mongodb://localhost:27017';
+const url = 'mongodb://localhost:27017';
+const databaseName = 'localizacao';
+const client = new MongoClient(url, { useNewUrlParser: true });
 
-// // Database Name
-// const dbName = 'localizacao';
+const findDocuments = (db, collectionName, callback) => {
+  const collection = db.collection(collectionName);
+  collection.find({}).toArray((err, docs) => {
+    assert.equal(err, null);
+    console.log("Found the following records");
+    console.log(docs);
+    callback(docs);
+  });
+}
 
-// // Create a new MongoClient
-// const client = new MongoClient(url, { useNewUrlParser: true });
+const connectAndFind = (collectionName, res) => {
+  client.connect((err) => {
+    assert.equal(null, err);
+    console.log("Connected correctly to server");
+    const database = client.db(databaseName);
+    findDocuments(database, collectionName, (docs) => {
+      client.close;
+      return res.json({ [collectionName]: docs });
+    });
+  });
+}
 
-// // Use connect method to connect to the Server
-// client.connect(function(err) {
-//   assert.equal(null, err);
-//   console.log("Connected successfully to server");
+router.get("/getFuncionarios", (req, res) => {
+  return connectAndFind('funcionarios', res);
+});
 
-//   const db = client.db(dbName);
+router.get("/getLojas", (req, res) => {
+  return connectAndFind('lojas', res);
+});
 
-//   client.close();
-// });
-
-router.get("/get", (req, res) => {
-  return res.json({ msg: 'sucesso' })
+router.get("/getFuncionarioLoja", (req, res) => {
+  return connectAndFind('funcionario_loja', res);
 });
 
 app.use("/api", router);
