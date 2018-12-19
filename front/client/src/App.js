@@ -1,30 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-class App extends Component {
+import './App.scss'
 
-  state = {
-    msg: "not yet"
-  }
+import Layout from './components/Layout/Layout';
+import Localizacao from './containers/Localizacao/Localizacao';
 
-  // componentDidMount() {
-  //   this.getDataFromDatabase();
-  // }
+const app = (props) => (
+  <Router>
+    <Layout>
+      <Localizacao />
+    </Layout>
+  </Router>
+);
 
-  getDataFromDatabase = () => {
-    fetch("/api/get")
-      .then(data => data.json())
-      .then(res => this.setState({ msg: res.msg }))
-  }
-
-  render() {
-    return (
-      <div>
-        Here we go!
-        <p>{ this.state.msg }</p>
-        <button onClick={ this.getDataFromDatabase }>Fetch</button>
-      </div>
-    );
-  }
-}
-
-export default App;
+export default app;

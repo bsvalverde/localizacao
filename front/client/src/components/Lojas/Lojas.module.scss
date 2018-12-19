@@ -1,0 +1,12 @@
+.Lojas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: whitesmoke;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+  p {
+    padding: 15px;
+  }
+}

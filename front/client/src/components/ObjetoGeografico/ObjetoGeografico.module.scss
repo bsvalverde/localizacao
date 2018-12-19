@@ -1,0 +1,27 @@
+.Card {
+  padding: 10px;
+  margin: 10px;
+  width: 29%;
+  background-color: #f8f8f8;
+  box-shadow: 0 0 10px gainsboro;
+  border-radius: 5px;
+  transition: .4s;
+
+  .Nome {
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+  }
+
+  .Subtitulo {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 75%;
+  }
+
+  &:hover {
+    background-color: cornflowerblue;
+    box-shadow: 0 0 10px cadetblue;
+    transition: .4s;
+    color: white;
+  }
+}
