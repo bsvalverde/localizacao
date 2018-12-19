@@ -46,8 +46,8 @@ A interação com o banco de dados é feita através de interfaces. Desta forma,
 Foram utilizados também arquivos de configuração para armazenar constantes (como o raio da terra) e configurações (como os gateways da base de dados).
 
 ### Front-end
-O front-end foi implementado com React.js.
+O front-end foi implementado com React.js, SCSS e ES6.
 
-Inicialmente foi necessário criar uma aplicação servidor para resgatar os dados do banco e fornecê-los à aplicação React.
+Inicialmente foi necessário criar uma aplicação servidor para resgatar os dados do banco e fornecê-los à aplicação React. Isto foi feito com base neste tutorial: https://medium.com/javascript-in-plain-english/full-stack-mongodb-react-node-js-express-js-in-one-simple-app-6cc8ed6de274.
 
 Tendo feito isto, procurou-se organizar os componentes, novamente, de forma a organizar da melhor forma possível sua utilização e de diminuir ao máximo a repetição de código.
