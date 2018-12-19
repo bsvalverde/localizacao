@@ -51,3 +51,5 @@ O front-end foi implementado com React.js, SCSS e ES6.
 Inicialmente foi necessário criar uma aplicação servidor para resgatar os dados do banco e fornecê-los à aplicação React. Isto foi feito com base neste tutorial: https://medium.com/javascript-in-plain-english/full-stack-mongodb-react-node-js-express-js-in-one-simple-app-6cc8ed6de274.
 
 Tendo feito isto, procurou-se organizar os componentes, novamente, de forma a organizar da melhor forma possível sua utilização e de diminuir ao máximo a repetição de código.
+
+Para elevar a legibilidade do resultado foi disponibilizada a visualização dos funcionários e lojas presentes no banco de dados utilizado, assim como as associações. Estas podem ser vistas como uma lista de funcionários, cada um com as lojas próximas listadas, ou como uma lista de lojas, novamente com todos os funcionários próximos listados. Assim é possível que o usuário tenha um entendimento do problema sob mais de uma perspectiva.
