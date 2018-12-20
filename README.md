@@ -23,9 +23,15 @@ Para associar os funcionários às lojas mais próximas, o arquivo .jar localiza
 $ cd back
 $ java -jar localizacao.jar
 ```
-Por fim, para visualizar os resultados obtidos, executar:
+Por fim, para visualizar os resultados obtidos, é necessário instalar as dependências do react:
+
 ```
-$ cd ../front
+$ cd ../front/client
+$ npm install
+```
+Tendo feito isto, é possível inicializar o projeto:
+```
+$ cd ..
 $ npm start
 ```
 Os resultados estão disponíveis através da URL `localhost:3000` no navegador.
@@ -44,6 +50,8 @@ Como é um programa simples, executado pelo terminal, não há a implementação
 A interação com o banco de dados é feita através de interfaces. Desta forma, é possível implementar integrações com qualquer banco de dados desejado, desde que eles retornem os dados necessários para o fluxo do programa.
 
 Foram utilizados também arquivos de configuração para armazenar constantes (como o raio da terra) e configurações (como os gateways da base de dados).
+
+Os testes foram feitos com JUnit e podem ser rodados com o Eclipse.
 
 ### Front-end
 O front-end foi implementado com React.js, SCSS e ES6.
